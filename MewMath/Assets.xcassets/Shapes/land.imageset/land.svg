@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="390px" height="256px" viewBox="0 0 390 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 2</title>
+    <defs>
+        <linearGradient x1="3.13383567%" y1="30.5346308%" x2="93.959785%" y2="68.7671803%" id="linearGradient-1">
+            <stop stop-color="#9AD25B" offset="0%"></stop>
+            <stop stop-color="#61A62E" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-28.8%" y="-28.8%" width="157.5%" height="157.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.407843137   0 0 0 0 0.403921569  0 0 0 1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-41.4%" y="-41.4%" width="182.8%" height="182.8%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.407843137   0 0 0 0 0.403921569  0 0 0 1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPhone-14" transform="translate(0.000000, -588.000000)">
+            <g id="Group-2" transform="translate(0.000000, 588.308815)">
+                <path d="M0,3.6292287 C15.3333333,-7.94772245 57.6666667,8.17249202 127,51.9898721 C196.333333,95.8072522 255.5,105.24207 304.5,80.2943261 L390,51.9898721 L390,255.691185 L0,255.691185 L0,3.6292287 Z" id="Path" fill="url(#linearGradient-1)"></path>
+                <g id="SIgn-Asset" transform="translate(21.404425, 40.609967)">
+                    <text id="3" transform="translate(17.475386, 27.437704) rotate(-12.000000) translate(-17.475386, -27.437704) " font-family="GenkiDesuDEMO-Regular, Genki Desu DEMO" font-size="45" font-weight="normal" fill="#FD7472">
+                        <tspan x="5.47538647" y="41.9377041">3</tspan>
+                    </text>
+                    <text id="2" transform="translate(335.776099, 91.937453) rotate(24.000000) translate(-335.776099, -91.937453) " font-family="GenkiDesuDEMO-Regular, Genki Desu DEMO" font-size="50" font-weight="normal" fill="#FFEC5C">
+                        <tspan x="322.276099" y="108.437453">2</tspan>
+                    </text>
+                    <g id="PLUS" filter="url(#filter-2)" transform="translate(266.237805, 17.223448)" fill="#FE7373">
+                        <rect id="Rectangle" transform="translate(20.857770, 20.857770) rotate(-5.000000) translate(-20.857770, -20.857770) " x="0.357770025" y="15.85777" width="41" height="10" rx="5"></rect>
+                        <path d="M5.35777002,15.85777 L36.35777,15.85777 C39.1191938,15.85777 41.35777,18.0963463 41.35777,20.85777 C41.35777,23.6191938 39.1191938,25.85777 36.35777,25.85777 L5.35777002,25.85777 C2.59634628,25.85777 0.357770025,23.6191938 0.357770025,20.85777 C0.357770025,18.0963463 2.59634628,15.85777 5.35777002,15.85777 Z" id="Rectangle" transform="translate(20.857770, 20.857770) rotate(85.000000) translate(-20.857770, -20.857770) "></path>
+                    </g>
+                    <g id="PLUS" filter="url(#filter-3)" transform="translate(19.595575, 151.081218)" fill="#FE7373">
+                        <rect id="Rectangle" x="0" y="11" width="29" height="7" rx="3.5"></rect>
+                        <path d="M3.5,11 L25.5,11 C27.4329966,11 29,12.5670034 29,14.5 C29,16.4329966 27.4329966,18 25.5,18 L3.5,18 C1.56700338,18 2.36723813e-16,16.4329966 0,14.5 C-2.36723813e-16,12.5670034 1.56700338,11 3.5,11 Z" id="Rectangle" transform="translate(14.500000, 14.500000) rotate(90.000000) translate(-14.500000, -14.500000) "></path>
+                    </g>
+                    <rect id="MINUS" fill="#FFEC5C" transform="translate(21.095575, 95.081218) rotate(-15.000000) translate(-21.095575, -95.081218) " x="0.595574664" y="90.0812184" width="41" height="10" rx="5"></rect>
+                    <g id="EQUAL" transform="translate(294.593050, 146.105332)" fill="#FFFFFF">
+                        <rect id="Rectangle" transform="translate(27.567360, 19.091101) rotate(-28.000000) translate(-27.567360, -19.091101) " x="0.0673597431" y="12.0911011" width="55" height="14" rx="7"></rect>
+                        <path d="M17.9376901,31.8606717 L58.9376901,31.8606717 C62.8036833,31.8606717 65.9376901,34.9946784 65.9376901,38.8606717 C65.9376901,42.7266649 62.8036833,45.8606717 58.9376901,45.8606717 L17.9376901,45.8606717 C14.0716968,45.8606717 10.9376901,42.7266649 10.9376901,38.8606717 C10.9376901,34.9946784 14.0716968,31.8606717 17.9376901,31.8606717 Z" id="Rectangle" transform="translate(38.437690, 38.860672) rotate(-28.000000) translate(-38.437690, -38.860672) "></path>
+                    </g>
+                </g>
+                <rect id="MINUS" fill="#FFEC5C" transform="translate(216.500000, 233.691185) rotate(19.000000) translate(-216.500000, -233.691185) " x="196" y="228.691185" width="41" height="10" rx="5"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
