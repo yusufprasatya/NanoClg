@@ -5,22 +5,38 @@ struct Question1View: View {
     
     private let ballSize: CGFloat = 100
     @State var basketPool: [Bool] = Array(repeating: false, count: 6)
-    @State var basketPos: [CGFloat] = [190, 400]
+    @State var basketPos: [CGFloat] = [215, 400]
     @State var balls: [[CGFloat]] = [
-        [80, 500, 0.7],
-        [160, 500, 0.7],
-        [240, 500, 0.7],
-        [320, 500, 0.7],
+        [90, 500, 0.7],
+        [170, 500, 0.7],
+        [250, 500, 0.7],
+        [330, 500, 0.7],
     ]
+    @State var currentBoxPos: Int = 0
+    @State var answers = [
+        0: "",
+        1: "",
+        2: "",
+        3: ""
+    ]
+    
     var body: some View {
         NavigationStack {
             ZStack {
                 VStack {
                     Image("BgQuest")
                         .resizable()
-                        .frame(width: .infinity)
                         .ignoresSafeArea(.all)
                 }
+                VStack {
+                    QuestionBox()
+                    Spacer()
+                }
+                Image("Cat")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200)
+                    .position(x: 90, y: 210)
                 VStack {
                     HStack {
                         Button(action: {
@@ -41,14 +57,6 @@ struct Question1View: View {
                         .position(x: basketPos[0], y: basketPos[1])
                 }
                 Group {
-//                    ForEach(balls, id: \.self) { ball in
-//                        Image("BallFill")
-//                            .resizable()
-//                            .scaledToFit()
-//                            .frame(width: ballSize * ball[2], height: ballSize * ball[2])
-//                            .position(x: ball[0], y: ball[1])
-//                            .gesture(dragGesture(ballNum: 0)))
-//                    }
                     Image("BallFill")
                         .resizable()
                         .scaledToFit()
@@ -73,6 +81,17 @@ struct Question1View: View {
                         .frame(width: ballSize * balls[3][2], height: ballSize * balls[3][2])
                         .position(x: balls[3][0], y: balls[3][1])
                         .gesture(dragGesture(ballNum: 3))
+                }
+                VStack {
+                    Spacer()
+                    InfoBox()
+                }
+                VStack {
+                    Spacer()
+                    AnswerBox(
+                        currentBoxPos: $currentBoxPos,
+                        answers: $answers
+                    )
                 }
             }
         }
@@ -102,6 +121,7 @@ struct Question1View: View {
                 withAnimation(.spring(response: 0.4, dampingFraction: 0.3, blendDuration: 1)) {
                     self.balls[ballNum][2] = 0.7
                 }
+                UINotificationFeedbackGenerator().notificationOccurred(.success)
             })
     }
     
@@ -111,14 +131,94 @@ struct Question1View: View {
      */
     func onBasket(position: [CGFloat]) -> Bool {
         let xOver = abs(basketPos[0] - position[0])
-        let yOver = abs(basketPos[1] - position[1])
+        let yOver = abs(basketPos[1] - 25 - position[1])
         return (xOver < 130 && yOver < 54)
     }
     
     func ballCounter(_ arr: [Bool]) -> Int {
         return arr.reduce(0) { $1 ? $0 + 1 : $0 }
     }
+}
+
+struct QuestionBox: View {
+    var body: some View {
+        ZStack {
+            Image("QuestionBox")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 110)
+        }.padding()
+    }
+}
+
+struct AnswerBox: View {
+    @Binding var currentBoxPos: Int
+    @Binding var answers: [Int: String]
     
+    var body: some View {
+        HStack {
+            ZStack {
+                RoundedRectangle(cornerRadius: 15)
+                    .strokeBorder(currentBoxPos == 0 ? Color("Pink") : Color("Green"), lineWidth: 3)
+                    .background(RoundedRectangle(cornerRadius: 15).fill(Color("Green")))
+                    .foregroundColor(Color("Green"))
+                    .frame(width: 70, height: 70)
+                Text(answers[0] ?? "")
+                    .font(.system(size: 40, design: .rounded))
+            }
+            ZStack {
+                RoundedRectangle(cornerRadius: 15)
+                    .strokeBorder(currentBoxPos == 1 ? Color("Pink") : Color("Green"), lineWidth: 3)
+                    .background(RoundedRectangle(cornerRadius: 15).fill(Color("Green")))
+                    .foregroundColor(Color("Green"))
+                    .frame(width: 70, height: 70)
+                Text(answers[1] ?? "")
+                    .font(.system(size: 40, design: .rounded))
+            }
+            ZStack {
+                RoundedRectangle(cornerRadius: 15)
+                    .strokeBorder(currentBoxPos == 2 ? Color("Pink") : Color("Green"), lineWidth: 3)
+                    .background(RoundedRectangle(cornerRadius: 15).fill(Color("Green")))
+                    .foregroundColor(Color("Green"))
+                    .frame(width: 70, height: 70)
+                Text(answers[2] ?? "")
+                    .font(.system(size: 40, design: .rounded))
+            }
+            Text("=")
+                .font(.system(size: 40, design: .rounded))
+            ZStack {
+                RoundedRectangle(cornerRadius: 15)
+                    .strokeBorder(currentBoxPos == 3 ? Color("Pink") : Color("Green"), lineWidth: 3)
+                    .background(RoundedRectangle(cornerRadius: 15).fill(Color("Green")))
+                    .foregroundColor(Color("Green"))
+                    .frame(width: 70, height: 70)
+                Text(answers[3] ?? "")
+                    .font(.system(size: 40, design: .rounded))
+            }
+        }
+    }
+}
+
+struct InfoBox: View {
+    var body: some View {
+        RoundedRectangle(cornerRadius: 25)
+            .fill(Color("Green"))
+            .frame(height: 50)
+            .overlay(
+                HStack {
+                    Image("HintIcon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 30)
+                    
+                    Text("Masukkan bola kedalam keranjang!")
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                        .foregroundColor(.black)
+                }
+            )
+            .padding(.horizontal, 30)
+            .padding(.bottom, 90)
+    }
 }
 
 struct QuestionView_Previews: PreviewProvider {
