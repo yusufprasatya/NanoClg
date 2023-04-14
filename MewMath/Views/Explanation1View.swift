@@ -10,6 +10,8 @@ import SwiftUI
 struct Explanation1View: View {
     @Environment(\.dismiss) private var dismiss
     private let data = questionData
+    var isNabigate: Bool = false
+    @State var step: Int = 0
     
     var body: some View {
         NavigationStack{
@@ -116,7 +118,6 @@ struct Explanation1View: View {
                     }
                     
                 }
-                
             }
         }
     }
@@ -125,7 +126,8 @@ struct Explanation1View: View {
 struct BtnNext: View {
     var body: some View {
         Button {
-                        
+            
+            print("Di klik nihh...")
         } label: {
             Text("LANJUT")
                 .font(.system(size: 12, design: .rounded))
@@ -158,7 +160,6 @@ struct BtnNextOutline: View {
                 .foregroundColor(.pink)
                 .frame(width: 300)
                 .background(
-
                     RoundedRectangle(
                         cornerRadius: 20,
                         style: .continuous

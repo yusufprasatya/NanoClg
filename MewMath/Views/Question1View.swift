@@ -53,7 +53,7 @@ struct Question1View: View {
                     .padding()
                     Spacer()
                 }
-                Image("Basket")
+                Image("basket")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 260)
