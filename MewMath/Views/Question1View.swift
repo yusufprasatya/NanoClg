@@ -227,13 +227,10 @@ struct Question1View: View {
                             .padding(.all, 100)
                     }
                 }
-                
                 if showAlertSuccess {
                     SuccessfulMessage()
                 }
-                
             }
-            
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -292,11 +289,12 @@ struct QuestionBox: View {
             VStack {
                 Text("Soal \(questionNumber)")
                     .font(.system(size: 12, design: .rounded))
+                    .foregroundColor(.black)
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 2)
                 Text(question)
                     .font(.system(size: 14, weight: .bold, design: .rounded))
-                    .foregroundColor(Color.black)
+                    .foregroundColor(.black)
                     .multilineTextAlignment(.center)
                     .frame(width: 320)
             }
@@ -427,14 +425,7 @@ struct OptionsBox: View {
     }
 }
 
-struct QuestionView_Previews: PreviewProvider {
-    static var previews: some View {
-        Question1View()
-    }
-}
-
 struct SuccessfulMessage: View {
-    
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -519,5 +510,11 @@ struct SuccessfulMessage: View {
                     .offset(x: -10, y: -40)
             }
         }
+    }
+}
+
+struct QuestionView_Previews: PreviewProvider {
+    static var previews: some View {
+        Question1View()
     }
 }
