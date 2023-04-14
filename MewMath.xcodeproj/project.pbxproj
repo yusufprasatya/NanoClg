@@ -15,6 +15,8 @@
 		18A5117229E79D5A00CFDA97 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A5117129E79D5A00CFDA97 /* QuestionModel.swift */; };
 		18A5117429E8037F00CFDA97 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A5117329E8037F00CFDA97 /* Data.swift */; };
 		18E86E5829E3C87C00BD72B4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E86E5729E3C87C00BD72B4 /* MapView.swift */; };
+		33EF7CCC29E9983D003EC247 /* copycat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 33EF7CCB29E9983D003EC247 /* copycat.mp3 */; };
+		33EF7CD429E9A24C003EC247 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF7CD329E9A24C003EC247 /* MusicPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,9 @@
 		18A5117129E79D5A00CFDA97 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		18A5117329E8037F00CFDA97 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		18E86E5729E3C87C00BD72B4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		33EF7CCB29E9983D003EC247 /* copycat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = copycat.mp3; sourceTree = "<group>"; };
+		33EF7CD229E99D9F003EC247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		33EF7CD329E9A24C003EC247 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,11 +64,14 @@
 		1848E67D29DE7DAD0003315C /* MewMath */ = {
 			isa = PBXGroup;
 			children = (
+				33EF7CD229E99D9F003EC247 /* Info.plist */,
+				33EF7CCD29E99846003EC247 /* Sounds */,
 				1848E68229DE7DAD0003315C /* Assets.xcassets */,
 				1848E67E29DE7DAD0003315C /* MewMathApp.swift */,
 				18A5117029E76AFE00CFDA97 /* Models */,
 				18E86E5529E3C74700BD72B4 /* Views */,
 				1848E68429DE7DAD0003315C /* Preview Content */,
+				33EF7CD329E9A24C003EC247 /* MusicPlayer.swift */,
 			);
 			path = MewMath;
 			sourceTree = "<group>";
@@ -93,6 +101,14 @@
 				1865986329E5319D00AADA3B /* Question1View.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		33EF7CCD29E99846003EC247 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				33EF7CCB29E9983D003EC247 /* copycat.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +169,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33EF7CCC29E9983D003EC247 /* copycat.mp3 in Resources */,
 				1848E68629DE7DAD0003315C /* Preview Assets.xcassets in Resources */,
 				1848E68329DE7DAD0003315C /* Assets.xcassets in Resources */,
 			);
@@ -169,6 +186,7 @@
 				18A5117429E8037F00CFDA97 /* Data.swift in Sources */,
 				1848E68129DE7DAD0003315C /* ContentView.swift in Sources */,
 				18E86E5829E3C87C00BD72B4 /* MapView.swift in Sources */,
+				33EF7CD429E9A24C003EC247 /* MusicPlayer.swift in Sources */,
 				1848E67F29DE7DAD0003315C /* MewMathApp.swift in Sources */,
 				18A5117229E79D5A00CFDA97 /* QuestionModel.swift in Sources */,
 			);
@@ -300,9 +318,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MewMath/Preview Content\"";
-				DEVELOPMENT_TEAM = 8W6F8JGKN9;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MewMath/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -332,9 +351,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MewMath/Preview Content\"";
-				DEVELOPMENT_TEAM = 8W6F8JGKN9;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MewMath/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
