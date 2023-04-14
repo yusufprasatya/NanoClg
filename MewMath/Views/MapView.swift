@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MapView: View {
     @Environment(\.dismiss) private var dismiss
+    @State private var isMuted = false
     
     var body: some View {
         NavigationStack {
@@ -39,6 +40,17 @@ struct MapView: View {
                             BtnBack()
                         }
                         Spacer()
+                        Button(action: {
+                            self.isMuted.toggle()
+                            isMuted ? MusicPlayer.shared.stopBackgroundMusic() : MusicPlayer.shared.startBackgroundMusic()
+                        }) {
+                            if isMuted {
+                                BtnSilent()
+                            } else {
+                                BtnSound()
+                            }
+                            
+                        }
                     }
                     .padding(.horizontal)
                     Spacer()
@@ -64,6 +76,38 @@ struct BtnBack: View {
                 .frame(width: 50)
                 .shadow(color: Color("PinkShadow").opacity(0.8),radius: 10)
             Image(systemName: "arrowshape.backward.fill")
+                .resizable()
+                .foregroundColor(.white)
+                .scaledToFill()
+                .frame(width: 22, height: 22)
+        }
+    }
+}
+
+struct BtnSound: View {
+    var body: some View {
+        ZStack {
+            Circle()
+                .fill(Color("Pink"))
+                .frame(width: 50)
+                .shadow(color: Color("PinkShadow").opacity(0.8),radius: 10)
+            Image(systemName: "speaker.wave.2.fill")
+                .resizable()
+                .foregroundColor(.white)
+                .scaledToFill()
+                .frame(width: 22, height: 22)
+        }
+    }
+}
+
+struct BtnSilent: View {
+    var body: some View {
+        ZStack {
+            Circle()
+                .fill(Color("Pink"))
+                .frame(width: 50)
+                .shadow(color: Color("PinkShadow").opacity(0.8),radius: 10)
+            Image(systemName: "speaker.slash.fill")
                 .resizable()
                 .foregroundColor(.white)
                 .scaledToFill()
@@ -169,14 +213,14 @@ struct ObjLevel: View {
             .padding(.top, 340)
             HStack {
                 Spacer()
-                NavigationLink(destination: Question1View(), label: {
+                NavigationLink(destination: Question2View(), label: {
                     BtnLevel(bgColorName: "Pink", imageName: "Fish", levelName: "Ikan")
                 })
             }
             .padding(.trailing, 70)
             .padding(.top, 310)
             BtnLevel(bgColorName: "Grey", imageName: "CatFootPrint")
-
+            
                 .padding(.top, 20)
             HStack {
                 BtnLevel(bgColorName: "Grey", imageName: "CatFootPrint")
@@ -190,7 +234,7 @@ struct ObjLevel: View {
             }
             .padding(.bottom, 310)
             .padding(.trailing, 70)
-
+            
             BtnLevel(bgColorName: "Grey", imageName: "CatFootPrint")
                 .padding(.bottom, 600)
         }
