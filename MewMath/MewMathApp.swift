@@ -4,7 +4,8 @@ import SwiftUI
 struct MewMathApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            Explanation1View()
         }
     }
 }
