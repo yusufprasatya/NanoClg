@@ -213,7 +213,7 @@ struct ObjLevel: View {
             .padding(.top, 340)
             HStack {
                 Spacer()
-                NavigationLink(destination: Question1View(), label: {
+                NavigationLink(destination: Question2View(), label: {
                     BtnLevel(bgColorName: "Pink", imageName: "Fish", levelName: "Ikan")
                 })
             }

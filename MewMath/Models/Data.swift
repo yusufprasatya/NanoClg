@@ -21,4 +21,24 @@ var questionData: [Question] = [
         anwar: [4, 2, 6],
         operatorAnwar: "+"
     ),
+    Question(
+        id: 2,
+        fullQuestion: "Si Garong mempunyai 6 potong ikan di mangkuk makanannya. Kemudian Garong memakan 2 potong ikan. Berapa banyak potong ikan yang tersisa?",
+        stepQuestion: [
+            "Si Garong mempunyai 6 potong ikan di mangkuk makanannya.",
+            "Si Garong mempunyai 6 potong ikan di mangkuk makanannya.",
+            "Kemudian Garong memakan 2 potong ikan.",
+            "Kemudian Garong memakan 2 potong ikan.",
+            "Kemudian Garong memakan 2 potong ikan.",
+            "Berapa banyak potong ikan yang tersisa?",
+        ],
+        options: [
+            ["6", "4", "7", "2"],
+            ["5", "4", "2", "3"],
+            ["+", "-"],
+            ["6", "8", "4", "2"]
+        ],
+        anwar: [6, 2, 4],
+        operatorAnwar: "-"
+    )
 ]

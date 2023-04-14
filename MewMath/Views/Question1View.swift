@@ -7,18 +7,18 @@ struct Question1View: View {
     private let data = questionData
     
     @State var basketPool: [Bool] = Array(repeating: false, count: 6)
-    @State var basketPos: [CGFloat] = [195, 360]
+    @State var basketPos: [CGFloat] = [0, 0]
     @State var balls: [[CGFloat]] = [
-        [75, 440, 0.7],
-        [155, 440, 0.7],
-        [235, 440, 0.7],
-        [315, 440, 0.7],
-        
-        [155, 500, 0.7],
-        [235, 500, 0.7],
+        [0, 0, 0.7],
+        [0, 0, 0.7],
+        [0, 0, 0.7],
+        [0, 0, 0.7],
+        [0, 0, 0.7],
+        [0, 0, 0.7],
     ]
     @State var answers = [0: "?", 1: "?", 2: "?", 3: "?"]
     @State var showAlert = false
+    @State var showAlertSuccess = false
     
     @State private var redBall = ["dragable": true, "show": true]
     @State private var greenBall = ["dragable": true, "show": true]
@@ -53,97 +53,149 @@ struct Question1View: View {
                     .padding()
                     Spacer()
                 }
-                Image("Basket")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 260)
-                    .position(x: basketPos[0], y: basketPos[1])
                 VStack {
                     Spacer()
                     [0,2].contains(step) ? InfoBox() : nil
                     if step == 1 {
                         OptionsBox(
+                            step: $step,
                             answer: $answers,
+                            showAlert: $showAlert,
+                            showAlartSuccess: $showAlertSuccess,
                             correctAnswer: "\(data[0].anwar[0])",
                             answerFor: 0,
-                            opts: data[0].options[0],
-                            showAlert: $showAlert,
-                            step: $step
+                            opts: data[0].options[0]
                         )
                     } else if step == 3 {
                         OptionsBox(
+                            step: $step,
                             answer: $answers,
+                            showAlert: $showAlert,
+                            showAlartSuccess: $showAlertSuccess,
                             correctAnswer: "\(data[0].anwar[1])",
                             answerFor: 2,
                             opts: data[0].options[1],
-                            showAlert: $showAlert,
-                            step: $step
+                            text: "Berapa jumlah bola wol hijau yang diberikan?"
                         )
                     } else if step == 4 {
                         OptionsBox(
+                            step: $step,
                             answer: $answers,
+                            showAlert: $showAlert,
+                            showAlartSuccess: $showAlertSuccess,
                             correctAnswer: "\(data[0].operatorAnwar)",
                             answerFor: 1,
                             opts: data[0].options[2],
-                            text: "Menurut kamu, operasi apa yang cocok untuk soal tersebut?",
-                            showAlert: $showAlert,
-                            step: $step
+                            text: "Menurut kamu, operasi apa yang cocok untuk soal tersebut?"
                         )
                     } else if step == 5 {
                         OptionsBox(
+                            step: $step,
                             answer: $answers,
+                            showAlert: $showAlert,
+                            showAlartSuccess: $showAlertSuccess,
                             correctAnswer: "\(data[0].anwar[2])",
                             answerFor: 3,
-                            opts: data[0].options[3],
-                            showAlert: $showAlert,
-                            step: $step
+                            opts: data[0].options[3]
                         )
                     }
                     AnswerBox(currentBoxPos: step, answers: $answers)
                 }
-                if redBall["show"]! {
-                    Group {
-                        Image("BallFill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: ballSize * balls[0][2], height: ballSize * balls[0][2])
-                            .position(x: balls[0][0], y: balls[0][1])
-                            .gesture(dragGesture(ballNum: 0, dragable: redBall["dragable"]!))
-                        Image("BallFill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: ballSize * balls[1][2], height: ballSize * balls[1][2])
-                            .position(x: balls[1][0], y: balls[1][1])
-                            .gesture(dragGesture(ballNum: 1, dragable: redBall["dragable"]!))
-                        Image("BallFill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: ballSize * balls[2][2], height: ballSize * balls[2][2])
-                            .position(x: balls[2][0], y: balls[2][1])
-                            .gesture(dragGesture(ballNum: 2, dragable: redBall["dragable"]!))
-                        Image("BallFill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: ballSize * balls[3][2], height: ballSize * balls[3][2])
-                            .position(x: balls[3][0], y: balls[3][1])
-                            .gesture(dragGesture(ballNum: 3, dragable: redBall["dragable"]!))
-                    }
-                }
-                if step >= 2 {
-                    if greenBall["show"]! {
+                GeometryReader { gr in
+                    Image("Basket")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 260)
+                        .position(x: basketPos[0], y: basketPos[1])
+                        .onAppear {
+                            basketPos = [gr.size.width * 1/2, gr.size.height * 4/9]
+                        }
+                    if redBall["show"]! {
                         Group {
-                            Image("BallFillGreen")
+                            Image("BallFill")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: (ballSize - 14) * balls[4][2], height: ballSize * balls[4][2])
-                                .position(x: balls[4][0], y: balls[4][1])
-                                .gesture(dragGesture(ballNum: 4, dragable: greenBall["dragable"]!))
-                            Image("BallFillGreen")
+                                .frame(width: ballSize * balls[0][2], height: ballSize * balls[0][2])
+                                .position(x: balls[0][0], y: balls[0][1])
+                                .gesture(dragGesture(ballNum: 0, dragable: redBall["dragable"]!))
+                                .onAppear {
+                                    balls[0] = [
+                                        gr.size.width * 1/5,
+                                        gr.size.height * 4/7,
+                                        balls[0][2]
+                                    ]
+                                }
+                            Image("BallFill")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: (ballSize - 14) * balls[5][2], height: ballSize * balls[5][2])
-                                .position(x: balls[5][0], y: balls[5][1])
-                                .gesture(dragGesture(ballNum: 5, dragable: greenBall["dragable"]!))
+                                .frame(width: ballSize * balls[1][2], height: ballSize * balls[1][2])
+                                .position(x: balls[1][0], y: balls[1][1])
+                                .gesture(dragGesture(ballNum: 1, dragable: redBall["dragable"]!))
+                                .onAppear {
+                                    balls[1] = [
+                                        gr.size.width * 2/5,
+                                        gr.size.height * 4/7,
+                                        balls[1][2]
+                                    ]
+                                }
+                            Image("BallFill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: ballSize * balls[2][2], height: ballSize * balls[2][2])
+                                .position(x: balls[2][0], y: balls[2][1])
+                                .gesture(dragGesture(ballNum: 2, dragable: redBall["dragable"]!))
+                                .onAppear {
+                                    balls[2] = [
+                                        gr.size.width * 3/5,
+                                        gr.size.height * 4/7,
+                                        balls[2][2]
+                                    ]
+                                }
+                            Image("BallFill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: ballSize * balls[3][2], height: ballSize * balls[3][2])
+                                .position(x: balls[3][0], y: balls[3][1])
+                                .gesture(dragGesture(ballNum: 3, dragable: redBall["dragable"]!))
+                                .onAppear {
+                                    balls[3] = [
+                                        gr.size.width * 4/5,
+                                        gr.size.height * 4/7,
+                                        balls[3][2]
+                                    ]
+                                }
+                        }
+                    }
+                    if step >= 2 {
+                        if greenBall["show"]! {
+                            Group {
+                                Image("BallFillGreen")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: (ballSize - 14) * balls[4][2], height: ballSize * balls[4][2])
+                                    .position(x: balls[4][0], y: balls[4][1])
+                                    .gesture(dragGesture(ballNum: 4, dragable: greenBall["dragable"]!))
+                                    .onAppear {
+                                        balls[4] = [
+                                            gr.size.width * 2/5,
+                                            gr.size.height * 3/5,
+                                            balls[4][2]
+                                        ]
+                                    }
+                                Image("BallFillGreen")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: (ballSize - 14) * balls[5][2], height: ballSize * balls[5][2])
+                                    .position(x: balls[5][0], y: balls[5][1])
+                                    .gesture(dragGesture(ballNum: 5, dragable: greenBall["dragable"]!))
+                                    .onAppear {
+                                        balls[5] = [
+                                            gr.size.width * 3/5,
+                                            gr.size.height * 3/5,
+                                            balls[5][2]
+                                        ]
+                                    }
+                            }
                         }
                     }
                 }
@@ -165,7 +217,7 @@ struct Question1View: View {
                             .fill(Color("BrokenWhite"))
                             .frame(height: 150)
                             .overlay(VStack {
-                                Text("Maaf dick kamu salah, coba lagi!!!")
+                                Text("Maaf dik kamu salah, coba lagi!!!")
                                     .foregroundColor(Color.black)
                                     .multilineTextAlignment(.center)
                                     .padding(.horizontal, 30)
@@ -174,6 +226,9 @@ struct Question1View: View {
                             })
                             .padding(.all, 100)
                     }
+                }
+                if showAlertSuccess {
+                    SuccessfulMessage()
                 }
             }
         }
@@ -234,11 +289,12 @@ struct QuestionBox: View {
             VStack {
                 Text("Soal \(questionNumber)")
                     .font(.system(size: 12, design: .rounded))
+                    .foregroundColor(.black)
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 2)
                 Text(question)
                     .font(.system(size: 14, weight: .bold, design: .rounded))
-                    .foregroundColor(Color.black)
+                    .foregroundColor(.black)
                     .multilineTextAlignment(.center)
                     .frame(width: 320)
             }
@@ -317,13 +373,14 @@ struct InfoBox: View {
 }
 
 struct OptionsBox: View {
+    @Binding var step: Int
     @Binding var answer: [Int: String]
+    @Binding var showAlert: Bool
+    @Binding var showAlartSuccess: Bool
     var correctAnswer: String
     var answerFor: Int
     var opts: [String] = Array(repeating: "0", count: 4)
     var text: String = "Berapa jumlah wol yang ada dikeranjang saat ini?"
-    @Binding var showAlert: Bool
-    @Binding var step: Int
     
     var body: some View {
         RoundedRectangle(cornerRadius: 24)
@@ -340,7 +397,11 @@ struct OptionsBox: View {
                             answer[answerFor] = "\(e)"
                             if e == correctAnswer {
                                 showAlert = false
-                                step = step < 5 ? (step + 1) : step
+                                if step == 5 {
+                                    showAlartSuccess = true
+                                } else {
+                                    step = step < 5 ? (step + 1) : step
+                                }
                             } else {
                                 showAlert = true
                             }
@@ -361,6 +422,94 @@ struct OptionsBox: View {
                 }
             })
             .padding(.horizontal)
+    }
+}
+
+struct SuccessfulMessage: View {
+    @Environment(\.dismiss) private var dismiss
+    
+    var body: some View {
+        ZStack {
+            Color.black
+                .opacity(0.5)
+                .edgesIgnoringSafeArea(.all)
+            
+            ZStack(alignment: .topTrailing) {
+                RoundedRectangle(cornerRadius: 24)
+                    .strokeBorder(Color("Pink"), lineWidth: 7)
+                    .background(RoundedRectangle(cornerRadius: 24).fill(Color.white))
+                    .frame(height: 375)
+                    .overlay(
+                        VStack {
+                            Text("Yeay!")
+                                .foregroundColor(Color("Pink"))
+                                .fontWeight(.bold)
+                                .font(.system(size: 24, design: .rounded))
+                                .padding(.top, 10)
+                            Spacer()
+                            HStack(alignment: .bottom) {
+                                Image("BallFillGreen2")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 50)
+                                    .offset(y: -5)
+                                Image("Cat")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 110)
+                                Image("BallFill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 25)
+                                    .offset(y: -20)
+                            }
+                            Spacer()
+                            Text("Kamu berhasil menjawab soal cerita tentang pertambahan")
+                                .foregroundColor(Color.black)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal, 30)
+                                .font(.system(size: 16))
+                            Spacer()
+                            Spacer()
+                            Button {
+                                
+                            } label: {
+                                Text("PEMBAHASAN")
+                                    .padding(.vertical, 14)
+                                    .padding(.horizontal, 60)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 12, design: .rounded))
+                                    .fontWeight(.bold)
+                                    .background(
+                                        RoundedRectangle(
+                                            cornerRadius: 12,
+                                            style: .continuous
+                                        )
+                                        .fill(Color("Pink"))
+                                    )
+                            }
+                            
+                            Button {
+                                dismiss()
+                            } label: {
+                                Text("KEMBALI")
+                                    .foregroundColor(Color("Grey"))
+                                    .font(.system(size: 12, design: .rounded))
+                                    .fontWeight(.bold)
+                            }
+                            Spacer()
+                        }
+                            .padding(.vertical))
+                
+                    .padding(.horizontal, 40)
+                
+                Image("Medali")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 80)
+                    .offset(x: -10, y: -40)
+            }
+        }
     }
 }
 

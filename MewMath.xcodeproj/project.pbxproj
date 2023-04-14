@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18196DF029E937E90076D669 /* Question2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18196DEF29E937E90076D669 /* Question2View.swift */; };
 		1848E67F29DE7DAD0003315C /* MewMathApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848E67E29DE7DAD0003315C /* MewMathApp.swift */; };
 		1848E68129DE7DAD0003315C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848E68029DE7DAD0003315C /* ContentView.swift */; };
 		1848E68329DE7DAD0003315C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1848E68229DE7DAD0003315C /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18196DEF29E937E90076D669 /* Question2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question2View.swift; sourceTree = "<group>"; };
 		1848E67B29DE7DAD0003315C /* MewMath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MewMath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1848E67E29DE7DAD0003315C /* MewMathApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MewMathApp.swift; sourceTree = "<group>"; };
 		1848E68029DE7DAD0003315C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				1848E68029DE7DAD0003315C /* ContentView.swift */,
 				18E86E5729E3C87C00BD72B4 /* MapView.swift */,
 				1865986329E5319D00AADA3B /* Question1View.swift */,
+				18196DEF29E937E90076D669 /* Question2View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			files = (
 				1865986429E5319D00AADA3B /* Question1View.swift in Sources */,
 				18A5117429E8037F00CFDA97 /* Data.swift in Sources */,
+				18196DF029E937E90076D669 /* Question2View.swift in Sources */,
 				1848E68129DE7DAD0003315C /* ContentView.swift in Sources */,
 				18E86E5829E3C87C00BD72B4 /* MapView.swift in Sources */,
 				33EF7CD429E9A24C003EC247 /* MusicPlayer.swift in Sources */,
