@@ -18,10 +18,11 @@ struct Question1View: View {
     ]
     @State var answers = [0: "?", 1: "?", 2: "?", 3: "?"]
     @State var showAlert = false
+    @State var showAlertSuccess = false
     
     @State private var redBall = ["dragable": true, "show": true]
     @State private var greenBall = ["dragable": true, "show": true]
-    @State private var step = 1
+    @State private var step = 0
     
     var body: some View {
         NavigationStack {
@@ -60,6 +61,7 @@ struct Question1View: View {
                             step: $step,
                             answer: $answers,
                             showAlert: $showAlert,
+                            showAlartSuccess: $showAlertSuccess,
                             correctAnswer: "\(data[0].anwar[0])",
                             answerFor: 0,
                             opts: data[0].options[0]
@@ -69,6 +71,7 @@ struct Question1View: View {
                             step: $step,
                             answer: $answers,
                             showAlert: $showAlert,
+                            showAlartSuccess: $showAlertSuccess,
                             correctAnswer: "\(data[0].anwar[1])",
                             answerFor: 2,
                             opts: data[0].options[1],
@@ -79,6 +82,7 @@ struct Question1View: View {
                             step: $step,
                             answer: $answers,
                             showAlert: $showAlert,
+                            showAlartSuccess: $showAlertSuccess,
                             correctAnswer: "\(data[0].operatorAnwar)",
                             answerFor: 1,
                             opts: data[0].options[2],
@@ -89,6 +93,7 @@ struct Question1View: View {
                             step: $step,
                             answer: $answers,
                             showAlert: $showAlert,
+                            showAlartSuccess: $showAlertSuccess,
                             correctAnswer: "\(data[0].anwar[2])",
                             answerFor: 3,
                             opts: data[0].options[3]
@@ -223,7 +228,10 @@ struct Question1View: View {
                     }
                 }
                 
-                SuccessfulMessage()
+                if showAlertSuccess {
+                    SuccessfulMessage()
+                }
+                
             }
             
         }
@@ -370,6 +378,7 @@ struct OptionsBox: View {
     @Binding var step: Int
     @Binding var answer: [Int: String]
     @Binding var showAlert: Bool
+    @Binding var showAlartSuccess: Bool
     var correctAnswer: String
     var answerFor: Int
     var opts: [String] = Array(repeating: "0", count: 4)
@@ -391,7 +400,7 @@ struct OptionsBox: View {
                             if e == correctAnswer {
                                 showAlert = false
                                 if step == 5 {
-                                   // jika jawaban benar
+                                    showAlartSuccess = true
                                 } else {
                                     step = step < 5 ? (step + 1) : step
                                 }
@@ -425,6 +434,9 @@ struct QuestionView_Previews: PreviewProvider {
 }
 
 struct SuccessfulMessage: View {
+    
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         ZStack {
             Color.black
@@ -487,7 +499,7 @@ struct SuccessfulMessage: View {
                             }
                             
                             Button {
-                                
+                                dismiss()
                             } label: {
                                 Text("KEMBALI")
                                     .foregroundColor(Color("Grey"))
