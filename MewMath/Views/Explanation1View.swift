@@ -31,7 +31,6 @@ struct Explanation1View: View {
                             BtnBack()
                         }).padding(.horizontal,20)
                         Spacer()
-                        
                     }
                     
                     VStack {
@@ -46,7 +45,6 @@ struct Explanation1View: View {
                             .padding(.bottom, 2)
                             .frame(width: 300)
                             .padding(.top, 40)
-                        
                         
                         HStack{
                             VStack{
@@ -112,11 +110,9 @@ struct Explanation1View: View {
                             }.padding(.horizontal, 2)
                         }
                         BtnNext()
-                        BtnNextOutline()
                         Spacer()
                         
                     }
-                    
                 }
             }
         }
@@ -124,6 +120,7 @@ struct Explanation1View: View {
 }
 
 struct BtnNext: View {
+    var step: Int = 0
     var body: some View {
         Button {
             

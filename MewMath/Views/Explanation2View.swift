@@ -29,7 +29,6 @@ struct Explanation2View: View {
                             BtnBack()
                         }).padding(.horizontal,20)
                         Spacer()
-                        
                     }
                     
                     VStack {
