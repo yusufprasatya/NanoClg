@@ -18,6 +18,7 @@ struct Question2View: View {
     ]
     @State var answers = [0: "?", 1: "?", 2: "?", 3: "?"]
     @State var showAlert = false
+    @State var showAlertSuccess = false
     
     @State private var fishstart = ["dragable": true, "show": true]
     @State private var step = 0
@@ -51,8 +52,12 @@ struct Question2View: View {
                     .position(x: basketPos[0], y: basketPos[1])
                 VStack {
                     Spacer()
+                    if step == 0 {
+                        InfoBox2()
+                    } else if step == 2 {
+                        InfoBox2(text: "Beri 2 ikan ke Garong")
+                    }
                     
-                    [0,2].contains(step) ? InfoBox2() : nil
                     if step == 1 {
                         OptionsBox2(
                             answer2: $answers,
@@ -61,7 +66,8 @@ struct Question2View: View {
                             opts: data[1].options[0],
                             text: "Berapa jumlah ikan yang ada di mangkuk?",
                             showAlert: $showAlert,
-                            step: $step
+                            step: $step,
+                            showAlartSuccess: $showAlertSuccess
                         )
                     } else if step == 3 {
                         OptionsBox2(
@@ -71,7 +77,8 @@ struct Question2View: View {
                             opts: data[1].options[1],
                             text: "Berapa banyak ikan yang kamu berikan ke Garong?",
                             showAlert: $showAlert,
-                            step: $step
+                            step: $step,
+                            showAlartSuccess: $showAlertSuccess
                         )
                     } else if step == 4 {
                         OptionsBox2(
@@ -81,7 +88,8 @@ struct Question2View: View {
                             opts: data[1].options[2],
                             text: "Menurut kamu, operasi apa yang cocok untuk soal tersebut?",
                             showAlert: $showAlert,
-                            step: $step
+                            step: $step,
+                            showAlartSuccess: $showAlertSuccess
                         )
                     } else if step == 5 {
                         OptionsBox2(
@@ -91,7 +99,8 @@ struct Question2View: View {
                             opts: data[1].options[3],
                             text: "Berapa jumlah ikan yang belum dimakan?",
                             showAlert: $showAlert,
-                            step: $step
+                            step: $step,
+                            showAlartSuccess: $showAlertSuccess
                         )
                     }
                     AnswerBox2(currentBoxPos: step, answers: $answers)
@@ -164,6 +173,9 @@ struct Question2View: View {
                             })
                             .padding(.all, 100)
                     }
+                }
+                if showAlertSuccess {
+                    SuccessfulMessage()
                 }
             }
         }
@@ -288,6 +300,8 @@ struct AnswerBox2: View {
 }
 
 struct InfoBox2: View {
+    var text: String = "Masukkan Ikan kedalam mangkuk!"
+    
     var body: some View {
         RoundedRectangle(cornerRadius: 25)
             .fill(Color("Green"))
@@ -298,7 +312,7 @@ struct InfoBox2: View {
                         .resizable()
                         .scaledToFit()
                         .frame(height: 30)
-                    Text("Masukkan Ikan kedalam mangkuk!")
+                    Text(text)
                         .font(.system(size: 16, weight: .bold, design: .rounded))
                         .foregroundColor(.black)
                 }
@@ -315,6 +329,7 @@ struct OptionsBox2: View {
     var text: String = "Pilih Jawaban Dibawah!"
     @Binding var showAlert: Bool
     @Binding var step: Int
+    @Binding var showAlartSuccess: Bool
     
     var body: some View {
         RoundedRectangle(cornerRadius: 24)
@@ -331,7 +346,11 @@ struct OptionsBox2: View {
                             answer2[answerFor2] = "\(e)"
                             if e == correctAnswer2 {
                                 showAlert = false
-                                step = step < 5 ? (step + 1) : step
+                                if step == 5 {
+                                    showAlartSuccess = true
+                                } else {
+                                    step = step < 5 ? (step + 1) : step
+                                }
                             } else {
                                 showAlert = true
                             }

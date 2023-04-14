@@ -227,13 +227,10 @@ struct Question1View: View {
                             .padding(.all, 100)
                     }
                 }
-                
                 if showAlertSuccess {
                     SuccessfulMessage()
                 }
-                
             }
-            
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -428,14 +425,7 @@ struct OptionsBox: View {
     }
 }
 
-struct QuestionView_Previews: PreviewProvider {
-    static var previews: some View {
-        Question1View()
-    }
-}
-
 struct SuccessfulMessage: View {
-    
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -520,5 +510,11 @@ struct SuccessfulMessage: View {
                     .offset(x: -10, y: -40)
             }
         }
+    }
+}
+
+struct QuestionView_Previews: PreviewProvider {
+    static var previews: some View {
+        Question1View()
     }
 }
