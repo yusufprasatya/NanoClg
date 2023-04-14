@@ -18,10 +18,11 @@ struct Question1View: View {
     ]
     @State var answers = [0: "?", 1: "?", 2: "?", 3: "?"]
     @State var showAlert = false
+    @State var showAlertSuccess = false
     
     @State private var redBall = ["dragable": true, "show": true]
     @State private var greenBall = ["dragable": true, "show": true]
-    @State private var step = 1
+    @State private var step = 0
     
     var body: some View {
         NavigationStack {
@@ -60,6 +61,7 @@ struct Question1View: View {
                             step: $step,
                             answer: $answers,
                             showAlert: $showAlert,
+                            showAlartSuccess: $showAlertSuccess,
                             correctAnswer: "\(data[0].anwar[0])",
                             answerFor: 0,
                             opts: data[0].options[0]
@@ -69,6 +71,7 @@ struct Question1View: View {
                             step: $step,
                             answer: $answers,
                             showAlert: $showAlert,
+                            showAlartSuccess: $showAlertSuccess,
                             correctAnswer: "\(data[0].anwar[1])",
                             answerFor: 2,
                             opts: data[0].options[1],
@@ -79,6 +82,7 @@ struct Question1View: View {
                             step: $step,
                             answer: $answers,
                             showAlert: $showAlert,
+                            showAlartSuccess: $showAlertSuccess,
                             correctAnswer: "\(data[0].operatorAnwar)",
                             answerFor: 1,
                             opts: data[0].options[2],
@@ -89,6 +93,7 @@ struct Question1View: View {
                             step: $step,
                             answer: $answers,
                             showAlert: $showAlert,
+                            showAlartSuccess: $showAlertSuccess,
                             correctAnswer: "\(data[0].anwar[2])",
                             answerFor: 3,
                             opts: data[0].options[3]
@@ -212,7 +217,7 @@ struct Question1View: View {
                             .fill(Color("BrokenWhite"))
                             .frame(height: 150)
                             .overlay(VStack {
-                                Text("Maaf dick kamu salah, coba lagi!!!")
+                                Text("Maaf dik kamu salah, coba lagi!!!")
                                     .foregroundColor(Color.black)
                                     .multilineTextAlignment(.center)
                                     .padding(.horizontal, 30)
@@ -222,7 +227,13 @@ struct Question1View: View {
                             .padding(.all, 100)
                     }
                 }
+                
+                if showAlertSuccess {
+                    SuccessfulMessage()
+                }
+                
             }
+            
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -367,6 +378,7 @@ struct OptionsBox: View {
     @Binding var step: Int
     @Binding var answer: [Int: String]
     @Binding var showAlert: Bool
+    @Binding var showAlartSuccess: Bool
     var correctAnswer: String
     var answerFor: Int
     var opts: [String] = Array(repeating: "0", count: 4)
@@ -388,7 +400,7 @@ struct OptionsBox: View {
                             if e == correctAnswer {
                                 showAlert = false
                                 if step == 5 {
-                                   // jika jawaban benar
+                                    showAlartSuccess = true
                                 } else {
                                     step = step < 5 ? (step + 1) : step
                                 }
@@ -418,5 +430,94 @@ struct OptionsBox: View {
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
         Question1View()
+    }
+}
+
+struct SuccessfulMessage: View {
+    
+    @Environment(\.dismiss) private var dismiss
+    
+    var body: some View {
+        ZStack {
+            Color.black
+                .opacity(0.5)
+                .edgesIgnoringSafeArea(.all)
+            
+            ZStack(alignment: .topTrailing) {
+                RoundedRectangle(cornerRadius: 24)
+                    .strokeBorder(Color("Pink"), lineWidth: 7)
+                    .background(RoundedRectangle(cornerRadius: 24).fill(Color.white))
+                    .frame(height: 375)
+                    .overlay(
+                        VStack {
+                            Text("Yeay!")
+                                .foregroundColor(Color("Pink"))
+                                .fontWeight(.bold)
+                                .font(.system(size: 24, design: .rounded))
+                                .padding(.top, 10)
+                            Spacer()
+                            HStack(alignment: .bottom) {
+                                Image("BallFillGreen2")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 50)
+                                    .offset(y: -5)
+                                Image("Cat")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 110)
+                                Image("BallFill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 25)
+                                    .offset(y: -20)
+                            }
+                            Spacer()
+                            Text("Kamu berhasil menjawab soal cerita tentang pertambahan")
+                                .foregroundColor(Color.black)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal, 30)
+                                .font(.system(size: 16))
+                            Spacer()
+                            Spacer()
+                            Button {
+                                
+                            } label: {
+                                Text("PEMBAHASAN")
+                                    .padding(.vertical, 14)
+                                    .padding(.horizontal, 60)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 12, design: .rounded))
+                                    .fontWeight(.bold)
+                                    .background(
+                                        RoundedRectangle(
+                                            cornerRadius: 12,
+                                            style: .continuous
+                                        )
+                                        .fill(Color("Pink"))
+                                    )
+                            }
+                            
+                            Button {
+                                dismiss()
+                            } label: {
+                                Text("KEMBALI")
+                                    .foregroundColor(Color("Grey"))
+                                    .font(.system(size: 12, design: .rounded))
+                                    .fontWeight(.bold)
+                            }
+                            Spacer()
+                        }
+                            .padding(.vertical))
+                
+                    .padding(.horizontal, 40)
+                
+                Image("Medali")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 80)
+                    .offset(x: -10, y: -40)
+            }
+        }
     }
 }
