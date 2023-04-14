@@ -10,8 +10,8 @@ import SwiftUI
 struct Explanation1View: View {
     @Environment(\.dismiss) private var dismiss
     private let data = questionData
-    var isNabigate: Bool = false
-    @State var step: Int = 0
+    
+    @State var step: Int = 1
     
     var body: some View {
         NavigationStack{
@@ -46,70 +46,279 @@ struct Explanation1View: View {
                             .frame(width: 300)
                             .padding(.top, 40)
                         
-                        HStack{
-                            VStack{
-                                HStack{
-                                    Image("BallFill")
-                                    Image("BallFill")
+                        if step == 1 {
+                            HStack{
+                                VStack{
+                                    HStack{
+                                        Image("BallFill")
+                                        Image("BallFill")
+                                    }
+                                    HStack{
+                                        Image("BallFill")
+                                        Image("BallFill")
+                                    }
                                 }
-                                HStack{
-                                    Image("BallFill")
-                                    Image("BallFill")
-                                }
-                            }
-                            Text("=")
-                                .font(.system(size: 40, design: .rounded))
-                                .padding(.horizontal, 30)
-                            Text("4")
-                                .font(.system(size: 40, design: .rounded))
-                            
-                        }
-                        .padding(.top, 70)
-                        
-                        Spacer()
-                        Spacer()
-                        HStack{
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 15)
-                                    .strokeBorder( Color("PinkShadow"), lineWidth: 3)
-                                    .foregroundColor(Color("SemiGray"))
-                                    .frame(width: 57, height: 57)
+                                Text("=")
+                                    .font(.system(size: 40, design: .rounded))
+                                    .padding(.horizontal, 30)
                                 Text("4")
-                                    .font(.system(size: 25, design: .rounded))
+                                    .font(.system(size: 40, design: .rounded))
                                 
-                            }.padding(.horizontal, 2)
-        
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 15)
-                                    .foregroundColor(Color("SemiGray"))
-                                    .frame(width: 57, height: 57)
-                                Text("")
-                                    .font(.system(size: 25, design: .rounded))
-                                
-                            }.padding(.horizontal, 2)
+                            }
+                            .padding(.top, 70)
                             
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 15)
-                                    .foregroundColor(Color("SemiGray"))
-                                    .frame(width: 57, height: 57)
-                                Text("")
+                            Spacer()
+                            Spacer()
+                            HStack{
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .strokeBorder( Color("PinkShadow"), lineWidth: 3)
+                                        .foregroundColor(Color("SemiGray"))
+                                        .frame(width: 57, height: 57)
+                                    Text("4")
+                                        .font(.system(size: 25, design: .rounded))
+                                    
+                                }.padding(.horizontal, 2)
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .foregroundColor(Color("SemiGray"))
+                                        .frame(width: 57, height: 57)
+                                    Text("")
+                                        .font(.system(size: 25, design: .rounded))
+                                    
+                                }.padding(.horizontal, 2)
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .foregroundColor(Color("SemiGray"))
+                                        .frame(width: 57, height: 57)
+                                    Text("")
+                                        .font(.system(size: 25, design: .rounded))
+                                    
+                                }.padding(.horizontal, 2)
+                                
+                                Text("=")
                                     .font(.system(size: 25, design: .rounded))
                                 
-                            }.padding(.horizontal, 2)
-                            
-                            Text("=")
-                                .font(.system(size: 25, design: .rounded))
-                            
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 15)
-                                    .foregroundColor(Color("SemiGray"))
-                                    .frame(width: 57, height: 57)
-                                Text("")
-                                    .font(.system(size: 25, design: .rounded))
-                                
-                            }.padding(.horizontal, 2)
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .foregroundColor(Color("SemiGray"))
+                                        .frame(width: 57, height: 57)
+                                    Text("")
+                                        .font(.system(size: 25, design: .rounded))
+                                    
+                                }.padding(.horizontal, 2)
+                            }
                         }
-                        BtnNext()
+                        if step == 2 {
+                            HStack{
+                                Image("BallFillGreen")
+                                Image("BallFillGreen")
+                                
+                                Text("=")
+                                    .font(.system(size: 40, design: .rounded))
+                                    .padding(.horizontal, 30)
+                                Text("2")
+                                    .font(.system(size: 40, design: .rounded))
+                                
+                            }
+                            .padding(.top, 70)
+                            
+                            Spacer()
+                            Spacer()
+                            HStack{
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15)
+                                    
+                                        .foregroundColor(Color("SemiGray"))
+                                        .frame(width: 57, height: 57)
+                                    Text("")
+                                        .font(.system(size: 25, design: .rounded))
+                                    
+                                }.padding(.horizontal, 2)
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .foregroundColor(Color("SemiGray"))
+                                        .frame(width: 57, height: 57)
+                                    Text("")
+                                        .font(.system(size: 25, design: .rounded))
+                                    
+                                }.padding(.horizontal, 2)
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .strokeBorder( Color("PinkShadow"), lineWidth: 3)
+                                        .foregroundColor(Color("SemiGray"))
+                                        .frame(width: 57, height: 57)
+                                    Text("2")
+                                        .font(.system(size: 25, design: .rounded))
+                                    
+                                }.padding(.horizontal, 2)
+                                
+                                Text("=")
+                                    .font(.system(size: 25, design: .rounded))
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .foregroundColor(Color("SemiGray"))
+                                        .frame(width: 57, height: 57)
+                                    Text("")
+                                        .font(.system(size: 25, design: .rounded))
+                                    
+                                }.padding(.horizontal, 2)
+                            }
+                        }
+                        if step == 3 {
+                            HStack{
+                                Text("memberi")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.pink)
+                                
+                                Text("=")
+                                    .font(.system(size: 40, design: .rounded))
+                                    .padding(.horizontal, 30)
+                                Text("+")
+                                    .font(.system(size: 40, design: .rounded))
+                                
+                            }
+                            .padding(.top, 70)
+                            
+                            Spacer()
+                            Spacer()
+                            HStack{
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15)
+                                    
+                                        .foregroundColor(Color("SemiGray"))
+                                        .frame(width: 57, height: 57)
+                                    Text("")
+                                        .font(.system(size: 25, design: .rounded))
+                                    
+                                }.padding(.horizontal, 2)
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .strokeBorder( Color("PinkShadow"), lineWidth: 3)
+                                        .foregroundColor(Color("SemiGray"))
+                                        .frame(width: 57, height: 57)
+                                    Text("+")
+                                        .font(.system(size: 25, design: .rounded))
+                                    
+                                }.padding(.horizontal, 2)
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .foregroundColor(Color("SemiGray"))
+                                        .frame(width: 57, height: 57)
+                                    Text("")
+                                        .font(.system(size: 25, design: .rounded))
+                                    
+                                }.padding(.horizontal, 2)
+                                
+                                Text("=")
+                                    .font(.system(size: 25, design: .rounded))
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .foregroundColor(Color("SemiGray"))
+                                        .frame(width: 57, height: 57)
+                                    Text("")
+                                        .font(.system(size: 25, design: .rounded))
+                                    
+                                }.padding(.horizontal, 2)
+                            }
+                        }
+                        
+                        if step == 4{
+                            HStack{
+                                Text("4")
+                                    .font(.system(size: 40, design: .rounded))
+                                Text("+")
+                                    .font(.system(size: 40, design: .rounded))
+                                
+                                Text("2")
+                                    .font(.system(size: 40, design: .rounded))
+                                
+                                Text("=")
+                                    .font(.system(size: 40, design: .rounded))
+                                
+                                Text("?")
+                                    .font(.system(size: 40, design: .rounded))
+                                
+                            }
+                            .padding(.top, 70)
+                            
+                            Spacer()
+                            Spacer()
+                            HStack{
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15)
+                                    
+                                        .foregroundColor(Color("SemiGray"))
+                                        .frame(width: 57, height: 57)
+                                    Text("4")
+                                        .font(.system(size: 25, design: .rounded))
+                                    
+                                }.padding(.horizontal, 2)
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .foregroundColor(Color("SemiGray"))
+                                        .frame(width: 57, height: 57)
+                                    Text("+")
+                                        .font(.system(size: 25, design: .rounded))
+                                    
+                                }.padding(.horizontal, 2)
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .foregroundColor(Color("SemiGray"))
+                                        .frame(width: 57, height: 57)
+                                    Text("2")
+                                        .font(.system(size: 25, design: .rounded))
+                                    
+                                }.padding(.horizontal, 2)
+                                
+                                Text("=")
+                                    .font(.system(size: 25, design: .rounded))
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .strokeBorder( Color("PinkShadow"), lineWidth: 3)
+                                        .foregroundColor(Color("SemiGray"))
+                                        .frame(width: 57, height: 57)
+                                    Text("6")
+                                        .font(.system(size: 25, design: .rounded))
+                                    
+                                }.padding(.horizontal, 2)
+                            }
+                        }
+                        Button {
+                            step += 1
+                            if step >= 4 {
+                                step = 4
+                            }
+                            print(step)
+                            print("Di klik nihh...")
+                        } label: {
+                            Text("LANJUT")
+                                .font(.system(size: 12, design: .rounded))
+                                .fontWeight(.bold)
+                                .padding()
+                                .foregroundColor(.white)
+                                .frame(width: 300)
+                                .background(
+                                    
+                                    RoundedRectangle(
+                                        cornerRadius: 20,
+                                        style: .continuous
+                                    )
+                                    .fill(.pink)
+                                    
+                                )
+                        }
                         Spacer()
                         
                     }
@@ -119,36 +328,10 @@ struct Explanation1View: View {
     }
 }
 
-struct BtnNext: View {
-    var step: Int = 0
-    var body: some View {
-        Button {
-            
-            print("Di klik nihh...")
-        } label: {
-            Text("LANJUT")
-                .font(.system(size: 12, design: .rounded))
-                .fontWeight(.bold)
-                .padding()
-                .foregroundColor(.white)
-                .frame(width: 300)
-                .background(
-
-                    RoundedRectangle(
-                        cornerRadius: 20,
-                        style: .continuous
-                    )
-                    .fill(.pink)
-
-                )
-        }
-    }
-}
-
 struct BtnNextOutline: View {
     var body: some View {
         Button {
-                        
+            
         } label: {
             Text("REPLAY")
                 .font(.system(size: 12, design: .rounded))
@@ -162,7 +345,7 @@ struct BtnNextOutline: View {
                         style: .continuous
                     )
                     .stroke(.pink, lineWidth: 2)
-
+                    
                 )
         }
     }

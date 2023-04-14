@@ -16,9 +16,6 @@
 		18A5117429E8037F00CFDA97 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A5117329E8037F00CFDA97 /* Data.swift */; };
 		18E86E5829E3C87C00BD72B4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E86E5729E3C87C00BD72B4 /* MapView.swift */; };
 		DAE4834629E8ADE900355879 /* Explanation1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4834529E8ADE900355879 /* Explanation1View.swift */; };
-		DAE4834A29E8F51C00355879 /* Explanation2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4834929E8F51C00355879 /* Explanation2View.swift */; };
-		DAE4834C29E8FB6900355879 /* Explanation3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4834B29E8FB6900355879 /* Explanation3View.swift */; };
-		DAE4834E29E8FF4000355879 /* Explanation4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4834D29E8FF4000355879 /* Explanation4View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +29,6 @@
 		18A5117329E8037F00CFDA97 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		18E86E5729E3C87C00BD72B4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		DAE4834529E8ADE900355879 /* Explanation1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explanation1View.swift; sourceTree = "<group>"; };
-		DAE4834929E8F51C00355879 /* Explanation2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explanation2View.swift; sourceTree = "<group>"; };
-		DAE4834B29E8FB6900355879 /* Explanation3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explanation3View.swift; sourceTree = "<group>"; };
-		DAE4834D29E8FF4000355879 /* Explanation4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explanation4View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +94,6 @@
 				18E86E5729E3C87C00BD72B4 /* MapView.swift */,
 				1865986329E5319D00AADA3B /* Question1View.swift */,
 				DAE4834529E8ADE900355879 /* Explanation1View.swift */,
-				DAE4834929E8F51C00355879 /* Explanation2View.swift */,
-				DAE4834B29E8FB6900355879 /* Explanation3View.swift */,
-				DAE4834D29E8FF4000355879 /* Explanation4View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,15 +169,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE4834629E8ADE900355879 /* Explanation1View.swift in Sources */,
-				DAE4834A29E8F51C00355879 /* Explanation2View.swift in Sources */,
 				1865986429E5319D00AADA3B /* Question1View.swift in Sources */,
 				18A5117429E8037F00CFDA97 /* Data.swift in Sources */,
-				DAE4834C29E8FB6900355879 /* Explanation3View.swift in Sources */,
 				1848E68129DE7DAD0003315C /* ContentView.swift in Sources */,
 				18E86E5829E3C87C00BD72B4 /* MapView.swift in Sources */,
 				1848E67F29DE7DAD0003315C /* MewMathApp.swift in Sources */,
 				18A5117229E79D5A00CFDA97 /* QuestionModel.swift in Sources */,
-				DAE4834E29E8FF4000355879 /* Explanation4View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
