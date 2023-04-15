@@ -476,9 +476,7 @@ struct SuccessfulMessage: View {
                                 .font(.system(size: 16))
                             Spacer()
                             Spacer()
-                            Button {
-                                
-                            } label: {
+                            NavigationLink(destination: Explanation1View(), label: {
                                 Text("PEMBAHASAN")
                                     .padding(.vertical, 14)
                                     .padding(.horizontal, 60)
@@ -492,7 +490,7 @@ struct SuccessfulMessage: View {
                                         )
                                         .fill(Color("Pink"))
                                     )
-                            }
+                            })
                             
                             Button {
                                 dismiss()
