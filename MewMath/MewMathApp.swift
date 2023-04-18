@@ -9,6 +9,7 @@ struct MewMathApp: App {
     
     var body: some Scene {
         WindowGroup {
+        
             ContentView()
         }
     }

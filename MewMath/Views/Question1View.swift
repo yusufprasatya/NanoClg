@@ -53,6 +53,11 @@ struct Question1View: View {
                     .padding()
                     Spacer()
                 }
+                Image("basket")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 260)
+                    .position(x: basketPos[0], y: basketPos[1])
                 VStack {
                     Spacer()
                     [0,2].contains(step) ? InfoBox() : nil
@@ -472,9 +477,7 @@ struct SuccessfulMessage: View {
                                 .font(.system(size: 16))
                             Spacer()
                             Spacer()
-                            Button {
-                                
-                            } label: {
+                            NavigationLink(destination: Explanation1View(), label: {
                                 Text("PEMBAHASAN")
                                     .padding(.vertical, 14)
                                     .padding(.horizontal, 60)
@@ -488,7 +491,7 @@ struct SuccessfulMessage: View {
                                         )
                                         .fill(Color("Pink"))
                                     )
-                            }
+                            })
                             
                             Button {
                                 dismiss()
