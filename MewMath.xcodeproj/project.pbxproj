@@ -73,7 +73,6 @@
 				18A5117029E76AFE00CFDA97 /* Models */,
 				18E86E5529E3C74700BD72B4 /* Views */,
 				1848E68429DE7DAD0003315C /* Preview Content */,
-				33EF7CD329E9A24C003EC247 /* MusicPlayer.swift */,
 			);
 			path = MewMath;
 			sourceTree = "<group>";
@@ -109,6 +108,7 @@
 		33EF7CCD29E99846003EC247 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				33EF7CD329E9A24C003EC247 /* MusicPlayer.swift */,
 				33EF7CCB29E9983D003EC247 /* copycat.mp3 */,
 			);
 			path = Sounds;

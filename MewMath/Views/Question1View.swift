@@ -288,8 +288,9 @@ struct QuestionBox: View {
                 .frame(height: 110)
             VStack {
                 Text("Soal \(questionNumber)")
-                    .font(.system(size: 12, design: .rounded))
-                    .foregroundColor(.black)
+                    .font(.system(size: 14, design: .rounded))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color(red: 1.0, green: 0.41, blue: 0.403))
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 2)
                 Text(question)
