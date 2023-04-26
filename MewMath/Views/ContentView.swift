@@ -12,7 +12,7 @@ struct ContentView: View {
                 Splash()
                     .navigationBarBackButtonHidden(true)
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                             withAnimation {
                                 isActive = true
                             }
@@ -66,9 +66,16 @@ struct Splash: View{
             }
             VStack {
                 Spacer()
-                Image("Land")
-                    .resizable()
-                    .scaledToFit()
+                ZStack{
+                    Image("Land")
+                        .resizable()
+                        .scaledToFit()
+                    HStack{
+                        Text("Music Copyright")
+                        Label("syncopika", systemImage: "c.circle")
+                    }
+                    .padding(.top, 200)
+                }
             }.edgesIgnoringSafeArea(.all)
         }
     }
