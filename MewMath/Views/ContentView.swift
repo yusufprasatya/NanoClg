@@ -12,7 +12,7 @@ struct ContentView: View {
                 Splash()
                     .navigationBarBackButtonHidden(true)
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                             withAnimation {
                                 isActive = true
                             }
@@ -25,6 +25,9 @@ struct ContentView: View {
 }
 
 struct Splash: View{
+    
+    @State private var isAnimating: Bool = false
+    
     var body: some View {
         ZStack {
             Color("BgBlue").edgesIgnoringSafeArea(.all)
@@ -50,13 +53,29 @@ struct Splash: View{
             }
             VStack {
                 Image("Title")
+                    .resizable()
                     .shadow(color: Color(red: 255 / 255, green: 104 / 255, blue: 103 / 255).opacity(0.5),radius: 10)
+                    .frame(width: 149, height: 26)
+                    .scaleEffect(isAnimating ? 2 : 1)
+                    .onAppear() {
+                        withAnimation(.easeInOut(duration: 1.5))
+                        {
+                            isAnimating = true
+                        }
+                    }
             }
             VStack {
                 Spacer()
-                Image("Land")
-                    .resizable()
-                    .scaledToFit()
+                ZStack{
+                    Image("Land")
+                        .resizable()
+                        .scaledToFit()
+                    HStack{
+                        Text("Music Copyright")
+                        Label("syncopika", systemImage: "c.circle")
+                    }
+                    .padding(.top, 200)
+                }
             }.edgesIgnoringSafeArea(.all)
         }
     }
@@ -64,6 +83,9 @@ struct Splash: View{
 }
 
 struct Main: View{
+    
+    @State var rotateHead: CGFloat = 5
+    
     var body: some View{
         NavigationStack() {
             ZStack {
@@ -101,8 +123,24 @@ struct Main: View{
                 }.edgesIgnoringSafeArea(.all)
                 VStack {
                     Spacer()
-                    Image("Cat")
-                        .scaledToFit()
+                    ZStack{
+                        
+                        Image("Cat-body")
+                            .resizable()
+                            .frame(width: 235, height: 225)
+                        Image("Cat-head")
+                            .resizable()
+                            .frame(width: 235, height: 225)
+                            .rotationEffect(.degrees(rotateHead))
+                            .onAppear{
+                                withAnimation(
+                                    .easeInOut(duration: 1.0)
+                                    .repeatForever(autoreverses: true))
+                                {
+                                    rotateHead = -5
+                                }
+                            }
+                    }
                 }
                 VStack {
                     HStack {

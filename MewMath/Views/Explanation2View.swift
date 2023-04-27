@@ -24,7 +24,7 @@ struct Explanation2View: View {
     ]
     
     var body: some View {
-        NavigationStack{
+        NavigationView {
             ZStack{
                     GeometryReader { geo in
                         Color("BgSemiBlue")
@@ -352,29 +352,45 @@ struct Explanation2View: View {
                                 }.frame(width: 57, height: 57)
                                     .padding(.horizontal, 2)
                             }
+                            NavigationLink(destination: MapView(), label: {
+                                Text("Kembali ke peta")
+                                    .font(.system(size: 12, design: .rounded))
+                                    .fontWeight(.bold)
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .frame(width: 300)
+                                    .background(
+                                        RoundedRectangle(
+                                            cornerRadius: 20,
+                                            style: .continuous
+                                        )
+                                        .fill(.pink))
+                            })
                         }
-                        Button {
-                            step += 1
-                            if step >= 4 {
-                                step = 4
-                            }
-                            print(step)
-                            print("Di klik nihh...")
-                        } label: {
-                            Text("LANJUT")
-                                .font(.system(size: 12, design: .rounded))
-                                .fontWeight(.bold)
-                                .padding()
-                                .foregroundColor(.white)
-                                .frame(width: 300)
-                                .background(
-                                    
-                                    RoundedRectangle(
-                                        cornerRadius: 20,
-                                        style: .continuous
+                        
+                        if step != 4 {
+                            Button {
+                                if step < 4 {
+                                    step += 1
+                                } else {
+                                    step = 4
+                                }
+                            } label: {
+                                Text("LANJUT")
+                                    .font(.system(size: 12, design: .rounded))
+                                    .fontWeight(.bold)
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .frame(width: 300)
+                                    .background(
+                                        
+                                        RoundedRectangle(
+                                            cornerRadius: 20,
+                                            style: .continuous
+                                        )
+                                        .fill(.pink)
                                     )
-                                    .fill(.pink)
-                                )
+                            }
                         }
                         Spacer()
                     }
@@ -382,12 +398,13 @@ struct Explanation2View: View {
             }.navigationBarBackButtonHidden(true)
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 struct PembahasanSoal2: View{
     var body: some View{
-        Text("PEMBAHASAN2")
+        Text("PEMBAHASAN 2")
             .font(.system(size: 21, design: .rounded))
             .foregroundColor(Color.red)
             .fontWeight(.bold)
