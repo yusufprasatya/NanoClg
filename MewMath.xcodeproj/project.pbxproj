@@ -18,9 +18,30 @@
 		18E86E5829E3C87C00BD72B4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E86E5729E3C87C00BD72B4 /* MapView.swift */; };
 		33EF7CCC29E9983D003EC247 /* copycat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 33EF7CCB29E9983D003EC247 /* copycat.mp3 */; };
 		33EF7CD429E9A24C003EC247 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF7CD329E9A24C003EC247 /* MusicPlayer.swift */; };
+		DAAA76742A90A09D00C5F967 /* Question1Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA76732A90A09D00C5F967 /* Question1Test.swift */; };
+		DAAA76762A90A2B000C5F967 /* Question2Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA76752A90A2B000C5F967 /* Question2Test.swift */; };
 		DAE4834629E8ADE900355879 /* Explanation1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4834529E8ADE900355879 /* Explanation1View.swift */; };
 		DAEB1D9A29E9E35B00659829 /* Explanation2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB1D9929E9E35B00659829 /* Explanation2View.swift */; };
+		DAFA0AED2A8F664400D7EB8D /* MewMathUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA0AEC2A8F664400D7EB8D /* MewMathUITests.swift */; };
+		DAFA0AEF2A8F664400D7EB8D /* MewMathUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA0AEE2A8F664400D7EB8D /* MewMathUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DAF9BC042A8F110300785DB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1848E67329DE7DAD0003315C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1848E67A29DE7DAD0003315C;
+			remoteInfo = MewMath;
+		};
+		DAFA0AF02A8F664400D7EB8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1848E67329DE7DAD0003315C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1848E67A29DE7DAD0003315C;
+			remoteInfo = MewMath;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		18196DEF29E937E90076D669 /* Question2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question2View.swift; sourceTree = "<group>"; };
@@ -36,12 +57,32 @@
 		33EF7CCB29E9983D003EC247 /* copycat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = copycat.mp3; sourceTree = "<group>"; };
 		33EF7CD229E99D9F003EC247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		33EF7CD329E9A24C003EC247 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		DAAA76732A90A09D00C5F967 /* Question1Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question1Test.swift; sourceTree = "<group>"; };
+		DAAA76752A90A2B000C5F967 /* Question2Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question2Test.swift; sourceTree = "<group>"; };
 		DAE4834529E8ADE900355879 /* Explanation1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explanation1View.swift; sourceTree = "<group>"; };
 		DAEB1D9929E9E35B00659829 /* Explanation2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explanation2View.swift; sourceTree = "<group>"; };
+		DAF9BC002A8F110300785DB9 /* MewMathTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MewMathTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAFA0AEA2A8F664400D7EB8D /* MewMathUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MewMathUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAFA0AEC2A8F664400D7EB8D /* MewMathUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MewMathUITests.swift; sourceTree = "<group>"; };
+		DAFA0AEE2A8F664400D7EB8D /* MewMathUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MewMathUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1848E67829DE7DAD0003315C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAF9BBFD2A8F110300785DB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAFA0AE72A8F664400D7EB8D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -55,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				1848E67D29DE7DAD0003315C /* MewMath */,
+				DAF9BC012A8F110300785DB9 /* MewMathTests */,
+				DAFA0AEB2A8F664400D7EB8D /* MewMathUITests */,
 				1848E67C29DE7DAD0003315C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				1848E67B29DE7DAD0003315C /* MewMath.app */,
+				DAF9BC002A8F110300785DB9 /* MewMathTests.xctest */,
+				DAFA0AEA2A8F664400D7EB8D /* MewMathUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +165,24 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		DAF9BC012A8F110300785DB9 /* MewMathTests */ = {
+			isa = PBXGroup;
+			children = (
+				DAAA76752A90A2B000C5F967 /* Question2Test.swift */,
+				DAAA76732A90A09D00C5F967 /* Question1Test.swift */,
+			);
+			path = MewMathTests;
+			sourceTree = "<group>";
+		};
+		DAFA0AEB2A8F664400D7EB8D /* MewMathUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DAFA0AEC2A8F664400D7EB8D /* MewMathUITests.swift */,
+				DAFA0AEE2A8F664400D7EB8D /* MewMathUITestsLaunchTests.swift */,
+			);
+			path = MewMathUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +203,42 @@
 			productReference = 1848E67B29DE7DAD0003315C /* MewMath.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DAF9BBFF2A8F110300785DB9 /* MewMathTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAF9BC082A8F110300785DB9 /* Build configuration list for PBXNativeTarget "MewMathTests" */;
+			buildPhases = (
+				DAF9BBFC2A8F110300785DB9 /* Sources */,
+				DAF9BBFD2A8F110300785DB9 /* Frameworks */,
+				DAF9BBFE2A8F110300785DB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DAF9BC052A8F110300785DB9 /* PBXTargetDependency */,
+			);
+			name = MewMathTests;
+			productName = MewMathTests;
+			productReference = DAF9BC002A8F110300785DB9 /* MewMathTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DAFA0AE92A8F664400D7EB8D /* MewMathUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAFA0AF22A8F664400D7EB8D /* Build configuration list for PBXNativeTarget "MewMathUITests" */;
+			buildPhases = (
+				DAFA0AE62A8F664400D7EB8D /* Sources */,
+				DAFA0AE72A8F664400D7EB8D /* Frameworks */,
+				DAFA0AE82A8F664400D7EB8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DAFA0AF12A8F664400D7EB8D /* PBXTargetDependency */,
+			);
+			name = MewMathUITests;
+			productName = MewMathUITests;
+			productReference = DAFA0AEA2A8F664400D7EB8D /* MewMathUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -152,6 +251,14 @@
 				TargetAttributes = {
 					1848E67A29DE7DAD0003315C = {
 						CreatedOnToolsVersion = 14.3;
+					};
+					DAF9BBFF2A8F110300785DB9 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 1848E67A29DE7DAD0003315C;
+					};
+					DAFA0AE92A8F664400D7EB8D = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 1848E67A29DE7DAD0003315C;
 					};
 				};
 			};
@@ -169,6 +276,8 @@
 			projectRoot = "";
 			targets = (
 				1848E67A29DE7DAD0003315C /* MewMath */,
+				DAF9BBFF2A8F110300785DB9 /* MewMathTests */,
+				DAFA0AE92A8F664400D7EB8D /* MewMathUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -181,6 +290,20 @@
 				33EF7CCC29E9983D003EC247 /* copycat.mp3 in Resources */,
 				1848E68629DE7DAD0003315C /* Preview Assets.xcassets in Resources */,
 				1848E68329DE7DAD0003315C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAF9BBFE2A8F110300785DB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAFA0AE82A8F664400D7EB8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +327,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DAF9BBFC2A8F110300785DB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAAA76762A90A2B000C5F967 /* Question2Test.swift in Sources */,
+				DAAA76742A90A09D00C5F967 /* Question1Test.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAFA0AE62A8F664400D7EB8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAFA0AEF2A8F664400D7EB8D /* MewMathUITestsLaunchTests.swift in Sources */,
+				DAFA0AED2A8F664400D7EB8D /* MewMathUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DAF9BC052A8F110300785DB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1848E67A29DE7DAD0003315C /* MewMath */;
+			targetProxy = DAF9BC042A8F110300785DB9 /* PBXContainerItemProxy */;
+		};
+		DAFA0AF12A8F664400D7EB8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1848E67A29DE7DAD0003315C /* MewMath */;
+			targetProxy = DAFA0AF02A8F664400D7EB8D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1848E68729DE7DAD0003315C /* Debug */ = {
@@ -331,7 +485,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MewMath/Preview Content\"";
-				DEVELOPMENT_TEAM = KS4TNRVTWF;
+				DEVELOPMENT_TEAM = LC2HFZR2DS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MewMath/Info.plist;
@@ -391,6 +545,76 @@
 			};
 			name = Release;
 		};
+		DAF9BC062A8F110300785DB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LC2HFZR2DS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ilb.com.MewMathTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MewMath.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MewMath";
+			};
+			name = Debug;
+		};
+		DAF9BC072A8F110300785DB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LC2HFZR2DS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ilb.com.MewMathTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MewMath.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MewMath";
+			};
+			name = Release;
+		};
+		DAFA0AF32A8F664400D7EB8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LC2HFZR2DS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ilb.com.MewMathUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MewMath;
+			};
+			name = Debug;
+		};
+		DAFA0AF42A8F664400D7EB8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LC2HFZR2DS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ilb.com.MewMathUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MewMath;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -408,6 +632,24 @@
 			buildConfigurations = (
 				1848E68A29DE7DAD0003315C /* Debug */,
 				1848E68B29DE7DAD0003315C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAF9BC082A8F110300785DB9 /* Build configuration list for PBXNativeTarget "MewMathTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAF9BC062A8F110300785DB9 /* Debug */,
+				DAF9BC072A8F110300785DB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAFA0AF22A8F664400D7EB8D /* Build configuration list for PBXNativeTarget "MewMathUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAFA0AF32A8F664400D7EB8D /* Debug */,
+				DAFA0AF42A8F664400D7EB8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -273,6 +273,11 @@ struct Question1View: View {
     func onBasket(position: [CGFloat]) -> Bool {
         let xOver = abs(basketPos[0] - position[0])
         let yOver = abs(basketPos[1] - 25 - position[1])
+        
+        print("Calcualate XOver \(basketPos[0]) Position \(position[0])")
+        print("Calcualate YOver\(basketPos[1]) Position \(position[1])")
+
+        print("XOver \(xOver) yOver \(yOver)")
         return (xOver < 130 && yOver < 54)
     }
     

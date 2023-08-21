@@ -13,15 +13,15 @@ class MusicPlayer {
     var player: AVAudioPlayer?
     
     func startBackgroundMusic() {
-        if let path = Bundle.main.path(forResource: "copycat", ofType: "mp3") {
-            do {
-                player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-                player?.numberOfLoops = -1 // Infinite loop
-                player?.play()
-            } catch {
-                print("Could not find the music file.")
-            }
-        }
+//        if let path = Bundle.main.path(forResource: "copycat", ofType: "mp3") {
+//            do {
+//                player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+//                player?.numberOfLoops = -1 // Infinite loop
+//                player?.play()
+//            } catch {
+//                print("Could not find the music file.")
+//            }
+//        }
     }
     
     func stopBackgroundMusic() {
