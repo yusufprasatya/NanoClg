@@ -52,7 +52,7 @@ final class MewMathUITests: XCTestCase {
         element.children(matching: .image).matching(identifier: "CatFootPrint").element(boundBy: 2).tap()
         element.children(matching: .image).matching(identifier: "CatFootPrint").element(boundBy: 1).tap()
         element.children(matching: .image).matching(identifier: "CatFootPrint").element(boundBy: 3).tap()
-            
+        
         print("Masoook shini")
         XCTAssertTrue(imageCatMapExists)
         XCTAssertTrue(imageTree1Exists)
@@ -62,29 +62,7 @@ final class MewMathUITests: XCTestCase {
         XCTAssertTrue(element.exists)
     }
     
-//    func testQuestion1ScreenAndBehavior() {
-//        app.buttons["Play"].tap()
-//        app.buttons["Bola Wol"].tap()
-//
-//        let element = app.windows.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
-//        element.children(matching: .image).matching(identifier: "BallFill").element(boundBy: 0).tap()
-//        element.children(matching: .image).matching(identifier: "BallFill").element(boundBy: 1)/*@START_MENU_TOKEN@*/.swipeRight()/*[[".swipeUp()",".swipeRight()"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-//
-//        let ballfillImage = element.children(matching: .image).matching(identifier: "BallFill").element(boundBy: 2)
-//        ballfillImage.swipeUp()
-//        ballfillImage.swipeUp()
-//        element.children(matching: .image).matching(identifier: "BallFill").element(boundBy: 3)/*@START_MENU_TOKEN@*/.swipeLeft()/*[[".swipeUp()",".swipeLeft()"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-//        app.buttons["4"].tap()
-//        element.children(matching: .image).matching(identifier: "BallFillGreen").element(boundBy: 1).swipeUp()
-//        element.children(matching: .image).matching(identifier: "BallFillGreen").element(boundBy: 0)/*@START_MENU_TOKEN@*/.swipeRight()/*[[".swipeUp()",".swipeRight()"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-//        app.buttons["2"].tap()
-//        app.buttons["+"].tap()
-//        app.buttons["6"].tap()
-//        app.buttons["PEMBAHASAN"].tap()
-//
-//    }
-    
-    func testQuestionView() {
+    func testQuestion1View() {
         app.buttons["Play"].tap()
         
         let startQuestions = app.buttons["Bola Wol"].exists
@@ -112,11 +90,13 @@ final class MewMathUITests: XCTestCase {
                 print("Masroook")
                 element.children(matching: .image).matching(identifier: "BallFillGreen").element(boundBy: 1).tap()
                 element.children(matching: .image).matching(identifier: "BallFillGreen").element(boundBy: 0)/*@START_MENU_TOKEN@*/.swipeRight()/*[[".swipeUp()",".swipeRight()"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+                XCTAssertNotNil(element)
             }
             
             let button2 = app.buttons["2"]
             if (button2.exists) {
                 button2.tap()
+                XCTAssertEqual("2", button2.value as! String)
             }
             
             let assignmentOperator = app.buttons["+"]
@@ -125,16 +105,69 @@ final class MewMathUITests: XCTestCase {
             if (assignmentOperator.exists) {
                 print("Assignment here")
                 assignmentOperator.tap()
+                XCTAssertNotNil(assignmentOperator.value)
+                XCTAssertEqual("+", assignmentOperator.value as! String)
             }
             
             if (button6.exists) {
                 print("Button 6")
                 button6.tap()
+                XCTAssertNotNil(button6.value)
+                XCTAssertEqual("6", button6.value as! String)
             }
         }
+    }
+    
+    func testQuestion2View() {
+        app.buttons["Play"].tap()
+        app.buttons["Ikan"].tap()
         
+        let element = app.windows.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
+        element.children(matching: .image).matching(identifier: "Ikan").element(boundBy: 0).tap()
+        element.children(matching: .image).matching(identifier: "Ikan").element(boundBy: 1).tap()
+        
+        let ikanImage = element.children(matching: .image).matching(identifier: "Ikan").element(boundBy: 4)
+        ikanImage.tap()
+        element.children(matching: .image).matching(identifier: "Ikan").element(boundBy: 2).tap()
+        
+        let ikanImage2 = element.children(matching: .image).matching(identifier: "Ikan").element(boundBy: 5)
+        ikanImage2/*@START_MENU_TOKEN@*/.swipeLeft()/*[[".swipeUp()",".swipeLeft()"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        element.children(matching: .image).matching(identifier: "Ikan").element(boundBy: 3).tap()
+        
+        print("Quest \(app.staticTexts["stepQuestion"])")
+        
+        XCTAssertTrue(element.exists)
+        XCTAssertNotNil(element)
+        XCTAssertTrue(ikanImage.exists)
+        XCTAssertTrue(ikanImage2.exists)
+        XCTAssertNotNil(ikanImage)
+        XCTAssertNotNil(ikanImage2)
+        print(ikanImage)
+        
+        let stepQuestion = app.staticTexts["Si Garong mempunyai 6 potong ikan di mangkuk makanannya."]
+        let catImage = app.images["Cat"]
+        let bowlImage = app.images["bowl"]
+        let bgQuestImage = app.images["BgQuest"]
+        let hintIcon = app.images["HintIcon"]
+        let instructionText = app.staticTexts["Masukkan Ikan kedalam mangkuk!"]
+        let questionMarkIcon = element.children(matching: .staticText).matching(identifier: "?").element(boundBy: 0)
+        let assignmentText = app.staticTexts["="]
        
-//        app.buttons["PEMBAHASAN"].tap()
-        
+        XCTAssertNotNil(stepQuestion)
+        XCTAssertTrue(stepQuestion.exists)
+        XCTAssertNotNil(catImage)
+        XCTAssertTrue(catImage.exists)
+        XCTAssertNotNil(bowlImage)
+        XCTAssertTrue(bowlImage.exists)
+        XCTAssertNotNil(bgQuestImage)
+        XCTAssertTrue(bgQuestImage.exists)
+        XCTAssertNotNil(hintIcon)
+        XCTAssertTrue(hintIcon.exists)
+        XCTAssertNotNil(instructionText)
+        XCTAssertTrue(instructionText.exists)
+        XCTAssertNotNil(questionMarkIcon)
+        XCTAssertTrue(questionMarkIcon.exists)
+        XCTAssertNotNil(assignmentText)
+        XCTAssertTrue(assignmentText.exists)
     }
 }
